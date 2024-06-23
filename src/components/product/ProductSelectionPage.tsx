@@ -755,7 +755,7 @@ const ProductSelectionPage = () => {
         <h1 className="text-2xl desktop:text-3xl font-medium text-center mb-1 desktop:mb-4">
           AppleCare+ for Mac
         </h1>
-        <div className="px-4 desktop:px-56 wide_desktop:px-80">
+        <div className="px-4 desktop:px-56 wide_desktop:px-[550px]">
           <p className="desktop:text-lg">
             Every Mac comes with a{" "}
             <Link to={"#"} className="text-blue-700 underline">

@@ -13,13 +13,14 @@ import {
   appleValues,
   aboutApple,
 } from "./footerConstants";
-
-// MAKE IT RESPONSIVE IF THERE IS TIME
+import { useState } from "react";
 
 const ProdSelectorFooter = () => {
+  const [expandedLinks, setExpandedLinks] = useState({});
+
   return (
     <footer className="flex bg-gray-100 absolute">
-      <div className="desktop:p-6 pt-7 pb-4 px-4 desktop:mx-64 wide_desktop:mx-96">
+      <div className="desktop:px-6 px-4 desktop:mx-[122px] wide_desktop:mx-[445px] desktop:mt-6">
         <div className="flex items-start flex-col gap-3">
           <p className="text-xs font-light text-gray-950">
             ◊◊◊ Qualified Purchasers can receive Promotion Savings when they
@@ -256,15 +257,21 @@ const ProdSelectorFooter = () => {
             </Link>{" "}
             near you near you. Or call 1800-80-6419.
           </p>
-          <div className="w-full border-solid border-b border-gray-300 mt-2" />
-          <div className="flex justify-between items-center mt-2 w-full gap-4 md:flex-col md:items-start">
+          <div className="w-full border-solid border-b border-gray-300 mt-2 hidden desktop:block" />
+        </div>
+
+        <div className="grid gap-y-5 desktop:grid-cols-6 desktop:mt-4">
+          <div className="desktop:col-span-2 order-2 desktop:order-1">
             <p className="text-xs font-light text-gray-950">
               Copyright © 2024 Apple Inc. All rights reserved.
             </p>
+          </div>
+
+          <div className="desktop:col-span-3 order-3 desktop:order-2">
             <div className="flex items-center justify-start flex-wrap xxs:justify-center">
               {flatLinks.map((link) => (
                 <Link
-                  className="text-xs font-light text-gray-950 hover:underline pe-2 me-2 [&:not(:last-of-type)]:border-solid [&:not(:last-of-type)]:border-r [&:not(:last-of-type)]:border-black first-of-type:ps-0 last-of-type:pe-0 xxs:border-r"
+                  className="text-xs font-light text-gray-950 tracking-wide hover:underline pe-2 me-2 [&:not(:last-of-type)]:border-solid [&:not(:last-of-type)]:border-r [&:not(:last-of-type)]:border-black first-of-type:ps-0 last-of-type:pe-0 xxs:border-r"
                   key={link}
                   to="#"
                 >
@@ -272,6 +279,9 @@ const ProdSelectorFooter = () => {
                 </Link>
               ))}
             </div>
+          </div>
+
+          <div className="desktop:col-span-1 flex desktop:justify-end order-1 desktop:order-3 mt-4 desktop:mt-0">
             <p className="text-xs font-light text-gray-950">Malaysia</p>
           </div>
         </div>
