@@ -69,3 +69,16 @@ export const aboutApple = [
   "Events",
   "Contact Apple",
 ];
+
+export const linkCategories = [
+  { category: "Shop and Learn", links: shopAndLearn },
+  { category: "Apple Wallet", links: appleWallet },
+  { category: "Account", links: account },
+  { category: "Entertainment", links: entertainment },
+  { category: "Apple Store", links: appleStore },
+  { category: "For Business", links: forBusiness },
+  { category: "For Education", links: forEducation },
+  { category: "For Healthcare", links: forHealthCare },
+  { category: "Apple Values", links: appleValues },
+  { category: "About Apple", links: aboutApple },
+];

@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -12,9 +13,21 @@ import {
   forHealthCare,
   appleValues,
   aboutApple,
+  linkCategories,
 } from "./footerConstants";
+import { LinkCategory } from "./index ";
 
 const ProdSelectorFooter = () => {
+  const [categoryData, setCategoryData] =
+    useState<LinkCategory[]>(linkCategories);
+
+  const expandChange = (id: number) => {
+    const catData = categoryData.map((category, index) =>
+      index === id ? { ...category, expanded: !category.expanded } : category
+    );
+    setCategoryData(catData);
+  };
+
   return (
     <footer className="flex bg-gray-100">
       <div className="desktop:px-6 px-4 desktop:mx-[122px] wide_desktop:mx-[445px]">
@@ -172,159 +185,221 @@ const ProdSelectorFooter = () => {
           <div className="w-full border-solid border-b border-gray-300" />
         </div>
 
-        <div className="flex justify-between items-start flex-wrap w-full mt-4 grid grid-cols-5 xxs:flex xxs:flex-col xxs:items-center">
-          <div className="flex items-start flex-col gap-4 xxs:items-center xxs:text-center">
-            <div className="flex items-start flex-col gap-2">
-              <h5 className="text-xs font-medium">Shop and Learn</h5>
+        <div className="w-full desktop:hidden">
+          {categoryData.map((category, index) => (
+            <React.Fragment key={index}>
+              <div
+                className="border-b-2 cursor-pointer"
+                onClick={() => expandChange(index)}
+              >
+                <div className="flex justify-between pt-2">
+                  <p className="text-xs">{category.category}</p>
+                  <div className="flex items-center">
+                    {category.expanded ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                      >
+                        <g data-name="Layer 2">
+                          <path
+                            d="M18 15a1 1 0 0 1-.64-.23L12 10.29l-5.37 4.32a1 1 0 0 1-1.41-.15 1 1 0 0 1 .15-1.41l6-4.83a1 1 0 0 1 1.27 0l6 5a1 1 0 0 1 .13 1.41A1 1 0 0 1 18 15z"
+                            data-name="arrow-ios-upward"
+                          />
+                        </g>
+                      </svg>
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                      >
+                        <g data-name="Layer 2">
+                          <path
+                            d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z"
+                            data-name="arrow-ios-downward"
+                          />
+                        </g>
+                      </svg>
+                    )}
+                  </div>
+                </div>
+                {category.expanded && (
+                  <div className="px-4 py-2">
+                    {category.links.map((link) => (
+                      <div className="pb-1 last-of-type:pb-0">
+                        <Link
+                          to={"#"}
+                          className="text-xs font-light text-gray-950"
+                        >
+                          {link}
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </React.Fragment>
+          ))}
+        </div>
 
-              {shopAndLearn.map((link) => (
-                <Link
-                  className="text-xs font-light text-gray-950 hover:underline"
-                  key={link}
-                  to="#"
-                >
-                  {link}
-                </Link>
-              ))}
+        <div className="hidden desktop:block">
+          <div className="flex justify-between items-start flex-wrap w-full mt-4 grid grid-cols-5">
+            <div className="flex items-start flex-col gap-4">
+              <div className="flex items-start flex-col gap-2">
+                <h5 className="text-xs font-medium">Shop and Learn</h5>
+
+                {shopAndLearn.map((link) => (
+                  <Link
+                    className="text-xs font-light text-gray-950 hover:underline"
+                    key={link}
+                    to="#"
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="flex items-start flex-col gap-2">
+                <h5 className="text-xs font-medium">Apple Wallet</h5>
+
+                {appleWallet.map((link) => (
+                  <Link
+                    className="text-xs font-light text-gray-950 hover:underline"
+                    key={link}
+                    to="#"
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
             </div>
 
-            <div className="flex items-start flex-col gap-2">
-              <h5 className="text-xs font-medium">Apple Wallet</h5>
+            <div className="flex items-start flex-col gap-4">
+              <div className="flex items-start flex-col gap-2">
+                <h5 className="text-xs font-medium">Account</h5>
 
-              {appleWallet.map((link) => (
-                <Link
-                  className="text-xs font-light text-gray-950 hover:underline"
-                  key={link}
-                  to="#"
-                >
-                  {link}
-                </Link>
-              ))}
-            </div>
-          </div>
+                {account.map((link) => (
+                  <Link
+                    className="text-xs font-light text-gray-950 hover:underline"
+                    key={link}
+                    to="#"
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
 
-          <div className="flex items-start flex-col gap-4 xxs:items-center xxs:text-center">
-            <div className="flex items-start flex-col gap-2">
-              <h5 className="text-xs font-medium">Account</h5>
+              <div className="flex items-start flex-col gap-2">
+                <h5 className="text-xs font-medium">Entertainment</h5>
 
-              {account.map((link) => (
-                <Link
-                  className="text-xs font-light text-gray-950 hover:underline"
-                  key={link}
-                  to="#"
-                >
-                  {link}
-                </Link>
-              ))}
-            </div>
-
-            <div className="flex items-start flex-col gap-2">
-              <h5 className="text-xs font-medium">Entertainment</h5>
-
-              {entertainment.map((link) => (
-                <Link
-                  className="text-xs font-light text-gray-950 hover:underline"
-                  key={link}
-                  to="#"
-                >
-                  {link}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex items-start flex-col gap-4 xxs:items-center xxs:text-center">
-            <div className="flex items-start flex-col gap-2">
-              <h5 className="text-xs font-medium">Apple Store</h5>
-
-              {appleStore.map((link) => (
-                <Link
-                  className="text-xs font-light text-gray-950 hover:underline"
-                  key={link}
-                  to="#"
-                >
-                  {link}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex items-start flex-col gap-4 xxs:items-center xxs:text-center">
-            <div className="flex items-start flex-col gap-2">
-              <h5 className="text-xs font-medium">For Business</h5>
-
-              {forBusiness.map((link) => (
-                <Link
-                  className="text-xs font-light text-gray-950 hover:underline"
-                  key={link}
-                  to="#"
-                >
-                  {link}
-                </Link>
-              ))}
+                {entertainment.map((link) => (
+                  <Link
+                    className="text-xs font-light text-gray-950 hover:underline"
+                    key={link}
+                    to="#"
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
             </div>
 
-            <div className="flex items-start flex-col gap-2">
-              <h5 className="text-xs font-medium">For Education</h5>
+            <div className="flex items-start flex-col gap-4">
+              <div className="flex items-start flex-col gap-2">
+                <h5 className="text-xs font-medium">Apple Store</h5>
 
-              {forEducation.map((link) => (
-                <Link
-                  className="text-xs font-light text-gray-950 hover:underline"
-                  key={link}
-                  to="#"
-                >
-                  {link}
-                </Link>
-              ))}
+                {appleStore.map((link) => (
+                  <Link
+                    className="text-xs font-light text-gray-950 hover:underline"
+                    key={link}
+                    to="#"
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
             </div>
 
-            <div className="flex items-start flex-col gap-2">
-              <h5 className="text-xs font-medium">For Healthcare</h5>
+            <div className="flex items-start flex-col gap-4">
+              <div className="flex items-start flex-col gap-2">
+                <h5 className="text-xs font-medium">For Business</h5>
 
-              {forHealthCare.map((link) => (
-                <Link
-                  className="text-xs font-light text-gray-950 hover:underline"
-                  key={link}
-                  to="#"
-                >
-                  {link}
-                </Link>
-              ))}
+                {forBusiness.map((link) => (
+                  <Link
+                    className="text-xs font-light text-gray-950 hover:underline"
+                    key={link}
+                    to="#"
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="flex items-start flex-col gap-2">
+                <h5 className="text-xs font-medium">For Education</h5>
+
+                {forEducation.map((link) => (
+                  <Link
+                    className="text-xs font-light text-gray-950 hover:underline"
+                    key={link}
+                    to="#"
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="flex items-start flex-col gap-2">
+                <h5 className="text-xs font-medium">For Healthcare</h5>
+
+                {forHealthCare.map((link) => (
+                  <Link
+                    className="text-xs font-light text-gray-950 hover:underline"
+                    key={link}
+                    to="#"
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className="flex items-start flex-col gap-4 xxs:items-center xxs:text-center">
-            <div className="flex items-start flex-col gap-2">
-              <h5 className="text-xs font-medium">Apple Values</h5>
+            <div className="flex items-start flex-col gap-4">
+              <div className="flex items-start flex-col gap-2">
+                <h5 className="text-xs font-medium">Apple Values</h5>
 
-              {appleValues.map((link) => (
-                <Link
-                  className="text-xs font-light text-gray-950 hover:underline"
-                  key={link}
-                  to="#"
-                >
-                  {link}
-                </Link>
-              ))}
-            </div>
+                {appleValues.map((link) => (
+                  <Link
+                    className="text-xs font-light text-gray-950 hover:underline"
+                    key={link}
+                    to="#"
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
 
-            <div className="flex items-start flex-col gap-2">
-              <h5 className="text-xs font-medium">About Apple</h5>
+              <div className="flex items-start flex-col gap-2">
+                <h5 className="text-xs font-medium">About Apple</h5>
 
-              {aboutApple.map((link) => (
-                <Link
-                  className="text-xs font-light text-gray-950 hover:underline"
-                  key={link}
-                  to="#"
-                >
-                  {link}
-                </Link>
-              ))}
+                {aboutApple.map((link) => (
+                  <Link
+                    className="text-xs font-light text-gray-950 hover:underline"
+                    key={link}
+                    to="#"
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="flex items-start flex-col mt-8 w-full gap-2 xxs:flex xxs:flex-col xxs:items-center">
+        <div className="flex items-start flex-col mt-8 w-full gap-2">
           <p className="text-xs font-light text-gray-950">
             More ways to shop:{" "}
             <Link className="underline text-blue-700 font-light" to="#">
@@ -335,7 +410,7 @@ const ProdSelectorFooter = () => {
           <div className="w-full border-solid border-b border-gray-300 mt-2 hidden desktop:block" />
         </div>
 
-        <div className="grid gap-y-5 desktop:grid-cols-6 desktop:mt-4">
+        <div className="grid gap-y-5 desktop:grid-cols-6 desktop:mt-4 mb-5">
           <div className="desktop:col-span-2 order-2 desktop:order-1">
             <p className="text-xs font-light text-gray-950">
               Copyright © 2024 Apple Inc. All rights reserved.
@@ -343,10 +418,10 @@ const ProdSelectorFooter = () => {
           </div>
 
           <div className="desktop:col-span-3 order-3 desktop:order-2">
-            <div className="flex items-center justify-start flex-wrap xxs:justify-center">
+            <div className="flex items-center justify-start flex-wrap">
               {flatLinks.map((link) => (
                 <Link
-                  className="text-xs font-light text-gray-950 tracking-wide hover:underline pe-2 me-2 [&:not(:last-of-type)]:border-solid [&:not(:last-of-type)]:border-r [&:not(:last-of-type)]:border-black first-of-type:ps-0 last-of-type:pe-0 xxs:border-r"
+                  className="text-xs font-light text-gray-950 tracking-wide hover:underline pe-2 me-2 [&:not(:last-of-type)]:border-solid [&:not(:last-of-type)]:border-r [&:not(:last-of-type)]:border-black first-of-type:ps-0 last-of-type:pe-0"
                   key={link}
                   to="#"
                 >
