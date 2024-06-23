@@ -122,7 +122,7 @@ const ProductDetailPage = () => {
                   <div className="flex-initial text-sm">
                     <p>
                       Order today. Delivers to{" "}
-                      <Link to={"#"} className="text-blue-500 underline">
+                      <Link to={"#"} className="text-blue-700 underline">
                         55188
                       </Link>
                     </p>
@@ -149,7 +149,7 @@ const ProductDetailPage = () => {
                     <p>Order now. Pick up, in store:</p>
                     <p>
                       <span className="font-medium">Today</span> at{" "}
-                      <Link to={"#"} className="text-blue-500 underline">
+                      <Link to={"#"} className="text-blue-700 underline">
                         Apple The Exchange TRX
                       </Link>
                     </p>
@@ -173,7 +173,7 @@ const ProductDetailPage = () => {
                     </p>
                     <Link
                       to={"#"}
-                      className="text-sm text-blue-500 hover:underline flex justify-end"
+                      className="text-sm text-blue-700 hover:underline flex justify-end"
                     >
                       Explore monthly instalment options{" "}
                       <svg
@@ -231,7 +231,7 @@ const ProductDetailPage = () => {
           <p className="text-sm mx-14 text-center desktop:text-start">
             Pay 0% interest for up to 24 months. Terms apply.{" "}
             <span className="text-xs">◊◊</span>{" "}
-            <Link to={"#"} className="text-blue-500">
+            <Link to={"#"} className="text-blue-700">
               <span className="hover:underline">Learn more</span> &gt;
             </Link>
           </p>

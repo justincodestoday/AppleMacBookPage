@@ -6,6 +6,7 @@ import { navLinks, othersLinks } from "./headerConstant";
 const Header = () => {
   return (
     <header className="bg-white relative border-b-2">
+      {/* Navbar */}
       <div className="desktop:px-6 px-4 desktop:mx-[9px] wide_desktop:mx-96">
         <div className="block desktop:hidden">
           <div className="flex items-center justify-between">
@@ -156,6 +157,7 @@ const Header = () => {
         </div>
       </div>
 
+      {/* Secondary Navbar */}
       <div className="desktop:px-6 px-4 desktop:mx-[122px] wide_desktop:mx-[445px] py-3">
         <div className="flex items-center justify-between">
           <div>

@@ -329,7 +329,7 @@ const ProdSelectorFooter = () => {
         <div className="flex items-start flex-col mt-8 w-full gap-2 xxs:flex xxs:flex-col xxs:items-center">
           <p className="text-xs font-light text-gray-950">
             More ways to shop:{" "}
-            <Link className="underline text-blue-600 font-light" to="#">
+            <Link className="underline text-blue-700 font-light" to="#">
               Find a retailer
             </Link>{" "}
             near you near you. Or call 1800-80-6419.

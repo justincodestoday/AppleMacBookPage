@@ -123,7 +123,7 @@ const ProductSelectionPage = () => {
         <p className="text-sm mx-14 text-center desktop:text-start">
           Buy MacBook Pro with education savings. Plus get AirPods.{" "}
           <span className="text-xs">◊◊◊</span>{" "}
-          <Link to={"#"} className="text-blue-500">
+          <Link to={"#"} className="text-blue-700">
             <span className="hover:underline">Learn more</span> &gt;
           </Link>
         </p>
@@ -147,7 +147,7 @@ const ProductSelectionPage = () => {
         <p className="text-lg font-medium mx-14">
           Have questions about buying a Mac?
         </p>
-        <Link to={"#"} className="text-lg text-blue-500 hover:underline mx-14">
+        <Link to={"#"} className="text-lg text-blue-700 hover:underline mx-14">
           Chat with a Mac Specialist
         </Link>
       </div>
@@ -161,7 +161,7 @@ const ProductSelectionPage = () => {
         <div className="flex justify-center my-4 py-6">
           <button
             onClick={() => setSelectedSize("14-inch")}
-            className={`w-full ms-7 desktop:ms-96 py-7 rounded-l-xl text-lg font-medium ${
+            className={`w-full desktop:w-auto desktop:px-10 ms-7 py-7 rounded-l-xl text-lg font-medium ${
               selectedSize === "14-inch"
                 ? "border-2 border-blue-600"
                 : "border border-gray-300"
@@ -172,7 +172,7 @@ const ProductSelectionPage = () => {
 
           <button
             onClick={() => setSelectedSize("16-inch")}
-            className={`w-full me-7 desktop:me-96 py-7 rounded-r-xl text-lg font-medium ${
+            className={`w-full desktop:w-auto desktop:px-10 me-7 py-7 rounded-r-xl text-lg font-medium ${
               selectedSize === "16-inch"
                 ? "border-2 border-blue-600"
                 : "border border-gray-300"
@@ -205,7 +205,7 @@ const ProductSelectionPage = () => {
       </div>
 
       {/* MacBook Model Cards */}
-      <div className="desktop:p-6 p-4 desktop:mx-64 wide_desktop:mx-96">
+      <div className="desktop:px-6 px-4 desktop:mx-[122px] wide_desktop:mx-[445px] mt-8 desktop:mt-24">
         <div className="container grid gap-5 desktop:grid-cols-3">
           {filteredProducts?.map((product, index) => (
             <div key={index} className="bg-gray-100 px-6 rounded-2xl pb-9">
@@ -252,7 +252,10 @@ const ProductSelectionPage = () => {
 
               <ul className="mb-4">
                 {product.specs.map((spec, index) => (
-                  <p className="text-2xl font-medium" key={index}>
+                  <p
+                    className="text-2xl font-medium leading-tight tracking-tight"
+                    key={index}
+                  >
                     {spec}
                   </p>
                 ))}
@@ -266,7 +269,7 @@ const ProductSelectionPage = () => {
                 ))}
               </ul>
 
-              <p className="text-xl font-medium mb-2">
+              <p className="text-xl desktop:text-2xl font-medium mb-2 tracking-tight">
                 RM{" "}
                 {product.price.toLocaleString("en-MY", {
                   minimumFractionDigits: 2,
@@ -274,12 +277,13 @@ const ProductSelectionPage = () => {
                 })}
               </p>
               <p className="mb-2">or</p>
-              <p className="text-xl font-medium">
-                RM {(product.price / 24).toFixed(2)}/mo. for 24 mo.*
+              <p className="text-xl desktop:text-2xl font-medium tracking-tight">
+                RM {(product.price / 24).toFixed(2)}/mo. for{" "}
+                <br className="hidden desktop:block" /> 24 mo.*
               </p>
               <Link
                 to={"#"}
-                className="text-sm text-blue-500 hover:underline flex"
+                className="text-sm text-blue-700 hover:underline flex"
               >
                 Explore monthly instalment options{" "}
                 <svg
@@ -293,14 +297,16 @@ const ProductSelectionPage = () => {
                   <path d="M389.594 239.301H272.699V122.406c0-9.222-7.477-16.699-16.699-16.699-9.222 0-16.699 7.477-16.699 16.699v116.895H122.406c-9.222 0-16.699 7.477-16.699 16.699s7.477 16.699 16.699 16.699h116.895v116.895c0 9.222 7.477 16.699 16.699 16.699 9.222 0 16.699-7.477 16.699-16.699V272.699h116.895c9.222 0 16.699-7.477 16.699-16.699s-7.476-16.699-16.699-16.699z" />
                 </svg>
               </Link>
-              <p className="text-sm font-medium mt-14">Add a trade-in</p>
+              <p className="text-sm font-medium mt-14 desktop:mt-6">
+                Add a trade-in
+              </p>
               <p className="text-sm mb-1">
                 Get credit towards a new Mac when you trade in your eligible
                 computer. Or recycle it for free.**
               </p>
               <Link
                 to={"#"}
-                className="text-sm text-blue-500 hover:underline flex"
+                className="text-sm text-blue-700 hover:underline flex"
               >
                 Get started{" "}
                 <svg
@@ -329,7 +335,7 @@ const ProductSelectionPage = () => {
               </p>
               <Link
                 to={"#"}
-                className="text-sm text-blue-500 hover:underline flex"
+                className="text-sm text-blue-700 hover:underline flex"
               >
                 <svg
                   fill="#000000"
@@ -371,7 +377,7 @@ const ProductSelectionPage = () => {
                 <div className="flex-initial text-sm">
                   <p>
                     Order today. Delivers to{" "}
-                    <Link to={"#"} className="text-blue-500 underline">
+                    <Link to={"#"} className="text-blue-700 underline">
                       55188
                     </Link>
                   </p>
@@ -398,7 +404,7 @@ const ProductSelectionPage = () => {
                   <p>Order now. Pick up, in store:</p>
                   <p>
                     <span className="font-medium">Today</span> at{" "}
-                    <Link to={"#"} className="text-blue-500 underline">
+                    <Link to={"#"} className="text-blue-700 underline">
                       Apple The Exchange TRX
                     </Link>
                   </p>
@@ -409,14 +415,14 @@ const ProductSelectionPage = () => {
         </div>
       </div>
 
-      <div className="mx-auto flex flex-col items-center mt-16">
-        <h1 className="text-3xl desktop:text-5xl mx-14 font-medium text-center">
+      <div className="mx-auto flex flex-col items-center mt-16 desktop:mt-20">
+        <h1 className="text-3xl desktop:text-[40px] mx-14 font-medium text-center tracking-tight">
           What's in the Box
         </h1>
       </div>
 
-      <div className="desktop:p-6 p-4 desktop:mx-64 wide_desktop:mx-96">
-        <div className="container grid gap-y-4 desktop:grid-cols-3">
+      <div className="desktop:px-6 px-4 desktop:mx-[122px] wide_desktop:mx-[445px] mt-4 desktop:mt-12">
+        <div className="container grid gap-y-5 desktop:grid-cols-3">
           <div className="flex justify-center order-1">
             <img
               src={
@@ -425,7 +431,6 @@ const ProductSelectionPage = () => {
                   : require("../../assets/images/mbp16-witb-spaceblack.jpg")
               }
               alt={`${selectedSize} MacBook Pro`}
-              // className="object-scale-down w-11/12"
             />
           </div>
 
@@ -441,7 +446,6 @@ const ProductSelectionPage = () => {
                   ? "USB-C to MagSafe 3 Cable (2m)"
                   : "USB-C to MagSafe 3 Cable (2m)"
               }
-              // className="object-scale-down w-11/12"
             />
           </div>
 
@@ -457,7 +461,6 @@ const ProductSelectionPage = () => {
                   ? "USB-C Power Adapter"
                   : "140W USB-C Power Adapter"
               }
-              // className="object-scale-down w-11/12"
             />
           </div>
 
@@ -473,12 +476,317 @@ const ProductSelectionPage = () => {
             </p>
           </div>
 
-          <div className="flex justify-center order-6 mb-6 desktop:mb-0">
+          <div className="flex justify-center order-6 mb-20 desktop:mb-0">
             <p className="text-sm">
               {selectedSize === "14-inch"
                 ? "USB-C Power Adapter"
                 : "140W USB-C Power Adapter"}
             </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="desktop:px-6 px-4 desktop:mx-[122px] wide_desktop:mx-[445px] desktop:mt-24">
+        <div className="bg-gray-50 px-6 rounded-2xl pt-14">
+          <p className="text-2xl desktop:text-3xl font-medium text-center tracking-tight">
+            What to consider when choosing your MacBook Pro.
+          </p>
+          <p className="text-center mt-3 mb-6 desktop:mb-12">
+            Configure your laptop on the next step.
+          </p>
+          <div
+            className={`container grid gap-y-10 desktop:gap-10 desktop:px-8 ${
+              selectedSize === "14-inch"
+                ? "desktop:grid-cols-4"
+                : "desktop:grid-cols-3"
+            }`}
+          >
+            {selectedSize === "14-inch" ? (
+              <>
+                <div>
+                  <img
+                    width={36}
+                    src={require("../../assets/images/mbp-m3-icon.png")}
+                  />
+                  <p className="text-sm font-medium mt-3 desktop:mt-5">
+                    Apple M3 chip
+                  </p>
+                  <p className="text-sm mt-4 mb-2">
+                    M3 brings serious speed and capability to blaze through
+                    everyday activities, multitask across apps and video calls,
+                    and handle elaborate content in pro apps and games
+                  </p>
+                  <ul className="list-disc list-outside ms-5">
+                    <li className="text-sm mb-2">
+                      Run multiple apps, speed through thousands of photos
+                    </li>
+                    <li className="text-sm mb-2">Effortlessly edit 4K video</li>
+                    <li className="text-sm mb-2">
+                      Configure with up to 24GB unified memory
+                    </li>
+                    <li className="text-sm">Supports one external display</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <img
+                    width={36}
+                    src={require("../../assets/images/mbp-m3-pro-icon.png")}
+                  />
+                  <p className="text-sm font-medium mt-3 desktop:mt-5">
+                    Apple M3 Pro chip
+                  </p>
+                  <p className="text-sm mt-4 mb-2">
+                    Building on the M3 chip, M3 Pro provides even greater
+                    performance and additional unified memory for more demanding
+                    apps and workflows
+                  </p>
+                  <ul className="list-disc list-outside ms-5">
+                    <li className="text-sm mb-2">
+                      Manipulate gigapixel panoramas, compile millions of lines
+                      of code
+                    </li>
+                    <li className="text-sm mb-2">
+                      Edit multiple streams of 8K video
+                    </li>
+                    <li className="text-sm mb-2">
+                      Configure with up to 36GB unified memory
+                    </li>
+                    <li className="text-sm">
+                      Supports up to two external displays
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <img
+                    width={36}
+                    src={require("../../assets/images/mbp-m3-max-icon.png")}
+                  />
+                  <p className="text-sm font-medium mt-3 desktop:mt-5">
+                    Apple M3 Max chip
+                  </p>
+                  <p className="text-sm mt-4 mb-2">
+                    M3 Max powers the most extreme workflows with even more CPU
+                    and GPU cores, enormous unified memory and an advanced Media
+                    Engine
+                  </p>
+                  <ul className="list-disc list-outside ms-5">
+                    <li className="text-sm mb-2">
+                      Render intricate 3D content, develop transformer models
+                      with billions of parameters
+                    </li>
+                    <li className="text-sm mb-2">
+                      Tackle post-production of 8K video and beyond
+                    </li>
+                    <li className="text-sm mb-2">
+                      Configure with up to 128GB unified memory
+                    </li>
+                    <li className="text-sm">
+                      Supports up to four external displays
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <img
+                    width={36}
+                    src={require("../../assets/images/memory-icon-mac.png")}
+                  />
+                  <p className="text-sm font-medium mt-3 desktop:mt-5">
+                    Unified Memory
+                  </p>
+                  <p className="text-sm mt-4 mb-2">
+                    Faster and more efficient than traditional RAM, unified
+                    memory is integrated within the M3 family of chips so apps
+                    can quickly share data between the CPU, GPU and Neural
+                    Engine
+                  </p>
+                  <ul className="list-disc list-outside ms-5">
+                    <li className="text-sm mb-2">
+                      Run multiple apps at once while performance remains fast
+                      and responsive
+                    </li>
+                    <li className="text-sm mb-2">
+                      Add memory to run more apps simultaneously for faster,
+                      more fluid multitasking
+                    </li>
+                    <li className="text-sm">
+                      With M3 Max, MacBook Pro can be configured with up to
+                      128GB of memory
+                    </li>
+                  </ul>
+                </div>
+              </>
+            ) : (
+              <>
+                <div>
+                  <img
+                    width={36}
+                    src={require("../../assets/images/mbp-m3-pro-icon.png")}
+                  />
+                  <p className="text-sm font-medium mt-3 desktop:mt-5">
+                    Apple M3 Pro chip
+                  </p>
+                  <p className="text-sm mt-4 mb-2">
+                    Building on the M3 chip, M3 Pro provides even greater
+                    performance and additional unified memory for more demanding
+                    apps and workflows
+                  </p>
+                  <ul className="list-disc list-outside ms-5">
+                    <li className="text-sm mb-2">
+                      Manipulate gigapixel panoramas, compile millions of lines
+                      of code
+                    </li>
+                    <li className="text-sm mb-2">
+                      Edit multiple streams of 8K video
+                    </li>
+                    <li className="text-sm mb-2">
+                      Configure with up to 36GB unified memory
+                    </li>
+                    <li className="text-sm">
+                      Supports up to two external displays
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <img
+                    width={36}
+                    src={require("../../assets/images/mbp-m3-max-icon.png")}
+                  />
+                  <p className="text-sm font-medium mt-3 desktop:mt-5">
+                    Apple M3 Max chip
+                  </p>
+                  <p className="text-sm mt-4 mb-2">
+                    M3 Max powers the most extreme workflows with even more CPU
+                    and GPU cores, enormous unified memory and an advanced Media
+                    Engine
+                  </p>
+                  <ul className="list-disc list-outside ms-5">
+                    <li className="text-sm mb-2">
+                      Render intricate 3D content, develop transformer models
+                      with billions of parameters
+                    </li>
+                    <li className="text-sm mb-2">
+                      Tackle post-production of 8K video and beyond
+                    </li>
+                    <li className="text-sm mb-2">
+                      Configure with up to 128GB unified memory
+                    </li>
+                    <li className="text-sm">
+                      Supports up to four external displays
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <img
+                    width={36}
+                    src={require("../../assets/images/memory-icon-mac.png")}
+                  />
+                  <p className="text-sm font-medium mt-3 desktop:mt-5">
+                    Unified Memory
+                  </p>
+                  <p className="text-sm mt-4 mb-2">
+                    Faster and more efficient than traditional RAM, unified
+                    memory is integrated within the M3 family of chips so apps
+                    can quickly share data between the CPU, GPU and Neural
+                    Engine
+                  </p>
+                  <ul className="list-disc list-outside ms-5">
+                    <li className="text-sm mb-2">
+                      Run multiple apps at once while performance remains fast
+                      and responsive
+                    </li>
+                    <li className="text-sm mb-2">
+                      Add memory to run more apps simultaneously for faster,
+                      more fluid multitasking
+                    </li>
+                    <li className="text-sm">
+                      With M3 Max, MacBook Pro can be configured with up to
+                      128GB of memory
+                    </li>
+                  </ul>
+                </div>
+              </>
+            )}
+          </div>
+
+          <div className="mt-14 desktop:mt-12 pb-8 desktop:pb-12 mb-5">
+            <p className="text-xs desktop:text-center">
+              Have questions about buying a Mac?{" "}
+              <br className="desktop:hidden" />
+              <Link to={"#"} className="text-xs text-blue-700 hover:underline">
+                Chat with a Mac Specialist.
+              </Link>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-gray-50 w-full py-10 desktop:py-20">
+        <h1 className="text-3xl desktop:text-4xl font-medium text-center tracking-tight leading-none">
+          Compare Mac models
+        </h1>
+        <div className="flex justify-center">
+          <Link
+            to={"#"}
+            className="text-lg text-blue-700 hover:underline mt-4 mb-6 desktop:mb-8"
+          >
+            Choose the best Mac for you
+          </Link>
+        </div>
+        <div className="flex justify-center">
+          <img
+            width={320}
+            src={require(`../../assets/images/mac-compare.png`)}
+          />
+        </div>
+      </div>
+
+      <div className="w-full mt-20">
+        <div className="flex justify-center mb-8 desktop:mb-12">
+          <img
+            width={92}
+            src={require(`../../assets/images/applecare-hero-bb.jpg`)}
+          />
+        </div>
+        <h1 className="text-2xl desktop:text-3xl font-medium text-center mb-1 desktop:mb-4">
+          AppleCare+ for Mac
+        </h1>
+        <div className="px-4 desktop:px-56 wide_desktop:px-80">
+          <p className="desktop:text-lg">
+            Every Mac comes with a{" "}
+            <Link to={"#"} className="text-blue-700 underline">
+              one-year limited warranty
+            </Link>{" "}
+            and up to 90 days of{" "}
+            <Link to={"#"} className="text-blue-700 underline">
+              complimentary technical support
+            </Link>
+            . AppleCare+ for Mac extends your coverage to three years from your
+            AppleCare+ purchase date and adds unlimited incidents of accidental
+            damage protection, each subject to a service fee of RM 469 for
+            screen damage or external enclosure damage, or RM 1,429 for other
+            accidental damage. In addition, you'll get 24/7 priority access to
+            Apple experts by chat or phone through{" "}
+            <Link to={"#"} className="text-blue-700 underline">
+              getsupport.apple.com
+            </Link>
+            . For complete details, see the{" "}
+            <Link to={"#"} className="text-blue-700 underline">
+              terms
+            </Link>
+            .
+          </p>
+          <div className="flex desktop:justify-center">
+            <Link
+              to={"#"}
+              className="desktop:text-lg text-blue-700 hover:underline mt-1 desktop:mt-2 mb-[70px] desktop:mb-20"
+            >
+              Learn more about AppleCare+ &gt;
+            </Link>
           </div>
         </div>
       </div>
