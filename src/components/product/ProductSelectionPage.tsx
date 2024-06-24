@@ -22,7 +22,6 @@ const ProductSelectionPage = () => {
   const [selectedChip, setSelectedChip] = useState("All");
   const [filteredProducts, setFilteredProducts] = useState<Product[]>();
 
-  // NEED TO UNDERSTAND THIS
   // To manage selected colors for products
   const [selectedColor, setSelectedColor] = useState<{
     [key: number]: string;
@@ -37,7 +36,6 @@ const ProductSelectionPage = () => {
     navigate(`/${slug}`);
   };
 
-  // NEED TO UNDERSTAND THIS
   // Handles color selection for a specific product
   const handleColorSelect = (productId: number, color: string) => {
     setSelectedColor((prevColors) => ({
@@ -46,7 +44,6 @@ const ProductSelectionPage = () => {
     }));
   };
 
-  // NEED TO UNDERSTAND THIS
   // Gets the currently selected color name for the product
   const getColorName = (product: Product) => {
     const color = selectedColor[product.id] || product.colorOptions[0];
@@ -291,7 +288,7 @@ const ProductSelectionPage = () => {
                   width="14"
                   height="14"
                   viewBox="0 0 512 512"
-                  className="ms-2 self-center fill-blue-500"
+                  className="ms-2 self-center fill-blue-700"
                 >
                   <path d="M491.841 156.427c-19.471-45.946-51.936-85.013-92.786-112.637C358.217 16.166 308.893-.007 256 0c-35.254-.002-68.946 7.18-99.571 20.158-45.945 19.472-85.013 51.935-112.638 92.785C16.167 153.779-.007 203.104 0 256c-.002 35.255 7.181 68.948 20.159 99.573 19.471 45.946 51.937 85.013 92.786 112.637C153.783 495.834 203.107 512.007 256 512c35.253.002 68.946-7.18 99.571-20.158 45.945-19.471 85.013-51.935 112.638-92.785C495.834 358.22 512.007 308.894 512 256c.002-35.256-7.181-68.948-20.159-99.573zm-31.428 185.83c-16.851 39.781-45.045 73.723-80.476 97.676-35.443 23.953-78.02 37.926-123.936 37.933-30.619-.002-59.729-6.218-86.255-17.454-39.781-16.851-73.724-45.044-97.677-80.475C48.114 344.495 34.14 301.917 34.133 256c.002-30.62 6.219-59.731 17.454-86.257 16.851-39.781 45.045-73.724 80.476-97.676C167.506 48.113 210.084 34.14 256 34.133c30.619.002 59.729 6.218 86.255 17.454 39.781 16.85 73.724 45.044 97.677 80.475 23.953 35.443 37.927 78.02 37.934 123.939-.002 30.619-6.218 59.73-17.453 86.256z" />
                   <path d="M389.594 239.301H272.699V122.406c0-9.222-7.477-16.699-16.699-16.699-9.222 0-16.699 7.477-16.699 16.699v116.895H122.406c-9.222 0-16.699 7.477-16.699 16.699s7.477 16.699 16.699 16.699h116.895v116.895c0 9.222 7.477 16.699 16.699 16.699 9.222 0 16.699-7.477 16.699-16.699V272.699h116.895c9.222 0 16.699-7.477 16.699-16.699s-7.476-16.699-16.699-16.699z" />
@@ -314,7 +311,7 @@ const ProductSelectionPage = () => {
                   width="14"
                   height="14"
                   viewBox="0 0 512 512"
-                  className="ms-2 self-center fill-blue-500"
+                  className="ms-2 self-center fill-blue-700"
                 >
                   <path d="M491.841 156.427c-19.471-45.946-51.936-85.013-92.786-112.637C358.217 16.166 308.893-.007 256 0c-35.254-.002-68.946 7.18-99.571 20.158-45.945 19.472-85.013 51.935-112.638 92.785C16.167 153.779-.007 203.104 0 256c-.002 35.255 7.181 68.948 20.159 99.573 19.471 45.946 51.937 85.013 92.786 112.637C153.783 495.834 203.107 512.007 256 512c35.253.002 68.946-7.18 99.571-20.158 45.945-19.471 85.013-51.935 112.638-92.785C495.834 358.22 512.007 308.894 512 256c.002-35.256-7.181-68.948-20.159-99.573zm-31.428 185.83c-16.851 39.781-45.045 73.723-80.476 97.676-35.443 23.953-78.02 37.926-123.936 37.933-30.619-.002-59.729-6.218-86.255-17.454-39.781-16.851-73.724-45.044-97.677-80.475C48.114 344.495 34.14 301.917 34.133 256c.002-30.62 6.219-59.731 17.454-86.257 16.851-39.781 45.045-73.724 80.476-97.676C167.506 48.113 210.084 34.14 256 34.133c30.619.002 59.729 6.218 86.255 17.454 39.781 16.85 73.724 45.044 97.677 80.475 23.953 35.443 37.927 78.02 37.934 123.939-.002 30.619-6.218 59.73-17.453 86.256z" />
                   <path d="M389.594 239.301H272.699V122.406c0-9.222-7.477-16.699-16.699-16.699-9.222 0-16.699 7.477-16.699 16.699v116.895H122.406c-9.222 0-16.699 7.477-16.699 16.699s7.477 16.699 16.699 16.699h116.895v116.895c0 9.222 7.477 16.699 16.699 16.699 9.222 0 16.699-7.477 16.699-16.699V272.699h116.895c9.222 0 16.699-7.477 16.699-16.699s-7.476-16.699-16.699-16.699z" />
@@ -345,7 +342,7 @@ const ProductSelectionPage = () => {
                   id="Capa_1"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 48.065 48.065"
-                  className="me-2 self-center fill-blue-500"
+                  className="me-2 self-center fill-blue-700"
                 >
                   <path
                     d="M40.908,0H7.158c-0.553,0-1,0.448-1,1v46.065c0,0.401,0.239,0.763,0.608,0.92c0.369,0.157,0.797,0.078,1.085-0.2
@@ -507,6 +504,7 @@ const ProductSelectionPage = () => {
                   <img
                     width={36}
                     src={require("../../assets/images/mbp-m3-icon.png")}
+                    alt="M3 chip"
                   />
                   <p className="text-sm font-medium mt-3 desktop:mt-5">
                     Apple M3 chip
@@ -532,6 +530,7 @@ const ProductSelectionPage = () => {
                   <img
                     width={36}
                     src={require("../../assets/images/mbp-m3-pro-icon.png")}
+                    alt="M3 Pro chip"
                   />
                   <p className="text-sm font-medium mt-3 desktop:mt-5">
                     Apple M3 Pro chip
@@ -562,6 +561,7 @@ const ProductSelectionPage = () => {
                   <img
                     width={36}
                     src={require("../../assets/images/mbp-m3-max-icon.png")}
+                    alt="M3 Max chip"
                   />
                   <p className="text-sm font-medium mt-3 desktop:mt-5">
                     Apple M3 Max chip
@@ -592,6 +592,7 @@ const ProductSelectionPage = () => {
                   <img
                     width={36}
                     src={require("../../assets/images/memory-icon-mac.png")}
+                    alt="Unified Memory"
                   />
                   <p className="text-sm font-medium mt-3 desktop:mt-5">
                     Unified Memory
@@ -624,6 +625,7 @@ const ProductSelectionPage = () => {
                   <img
                     width={36}
                     src={require("../../assets/images/mbp-m3-pro-icon.png")}
+                    alt="M3 Pro chip"
                   />
                   <p className="text-sm font-medium mt-3 desktop:mt-5">
                     Apple M3 Pro chip
@@ -654,6 +656,7 @@ const ProductSelectionPage = () => {
                   <img
                     width={36}
                     src={require("../../assets/images/mbp-m3-max-icon.png")}
+                    alt="M3 Max chip"
                   />
                   <p className="text-sm font-medium mt-3 desktop:mt-5">
                     Apple M3 Max chip
@@ -684,6 +687,7 @@ const ProductSelectionPage = () => {
                   <img
                     width={36}
                     src={require("../../assets/images/memory-icon-mac.png")}
+                    alt="Unified Memory"
                   />
                   <p className="text-sm font-medium mt-3 desktop:mt-5">
                     Unified Memory
@@ -741,6 +745,7 @@ const ProductSelectionPage = () => {
           <img
             width={320}
             src={require(`../../assets/images/mac-compare.png`)}
+            alt="Mac compare"
           />
         </div>
       </div>
@@ -750,6 +755,7 @@ const ProductSelectionPage = () => {
           <img
             width={92}
             src={require(`../../assets/images/applecare-hero-bb.jpg`)}
+            alt="Apple Care logo"
           />
         </div>
         <h1 className="text-2xl desktop:text-3xl font-medium text-center mb-1 desktop:mb-4">
