@@ -1,3 +1,27 @@
+# Apple MacBook Page Clone
+
+This demo showcases the two pages with similarities to the official Apple MacBook pages. This demo is built using React, TypeScript, and Tailwind CSS. The demo is responsive to three different screen sizes: mobile (430px), desktop (1280px) and wide desktop (1920px). The pictures below are screenshots of some of the sections in the two pages.
+
+<img src="./src/assets/images/screenshots/screenshot-1.png" alt="Pg1, Pt1">
+
+<img src="./src/assets/images/screenshots/screenshot-2.png" alt="Pg1, Pt2">
+
+<img src="./src/assets/images/screenshots/screenshot-3.png" alt="Pg1, Pt3">
+
+<img src="./src/assets/images/screenshots/screenshot-4.png" alt="Pg1, Pt4">
+
+<img src="./src/assets/images/screenshots/screenshot-5.png" alt="Pg1, Pt5">
+
+<img src="./src/assets/images/screenshots/screenshot-6.png" alt="Pg1, Pt6">
+
+<img src="./src/assets/images/screenshots/screenshot-7.png" alt="Pg2, Pt1">
+
+<img src="./src/assets/images/screenshots/screenshot-8.png" alt="Pg2, Pt2">
+
+**Note: This project is open-source and available under the MIT License.**
+
+Special thanks to the React, TypeScript, and Tailwind CSS communities for their excellent documentation and support.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
